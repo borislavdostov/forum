@@ -5,7 +5,7 @@ import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ThemeListComponent } from './components/theme-list/theme-list.component';
-import { AsideComponent } from './aside/aside.component';
+import { AsideComponent } from './components/aside/aside.component';
 
 @NgModule({
   declarations: [
