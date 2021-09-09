@@ -8,12 +8,8 @@ interface IStorage {
 
 @Injectable()
 export class StorageService implements IStorage {
-  setItem<T>(key: string, item: T): T {
-    return item;
-  }
-  getItem<T>(key: string): T {
-    return null as any;
-  }
+  setItem<T>(key: string, item: T): T { return item; }
+  getItem<T>(key: string): T { return null!; }
 }
 
 export function storageFactory(platformId: string): any {
@@ -27,7 +23,7 @@ export function storageFactory(platformId: string): any {
 }
 
 export const storageServiceProvider: Provider = {
-  provide: Storage,
+  provide: StorageService,
   useFactory: storageFactory,
   deps: [PLATFORM_ID]
 }
