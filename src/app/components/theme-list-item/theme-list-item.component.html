@@ -1,1 +1,14 @@
-<p>theme-list-item works!</p>
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <a href="#" class="link-primary">
+                <h3 class="card-title">{{theme.name}}</h3>
+            </a>
+            <div class="d-flex bd-highlight mb-3">
+                <p class="me-auto p-2 bd-highlight">Username: <span>{{theme.userId.username}}</span></p>
+                <p class="p-2 bd-highlight">Subscribers:<span>{{theme.subscribers}}</span></p>
+                <p class="p-2 bd-highlight">Date: <time>{{theme.created_at}}</time></p>
+            </div>
+        </div>
+    </div>
+</div>

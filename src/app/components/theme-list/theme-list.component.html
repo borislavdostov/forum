@@ -1,20 +1,6 @@
-<div class="row row-cols-1 g-4 mt-4">
-    
-    <div class="col">
-        <div class="card">
-            <div class="card-body">
-                <a href="#" class="link-primary">
-                    <h3 class="card-title">Card title</h3>
-                </a>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <div class="d-flex bd-highlight mb-3">
-                    <p class="me-auto p-2 bd-highlight">Username: <span>David</span></p>
-                    <p class="p-2 bd-highlight">Subscribers:<span>324</span></p>
-                    <p class="p-2 bd-highlight">Date: 09.09.2021 11:34</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div *ngIf="themeList" class="row row-cols-1 g-4 mt-4">
+    <app-theme-list-item *ngFor="let theme of themeList" [theme]="theme"></app-theme-list-item>
+</div>
+<div *ngIf="!themeList">
+    Loading...
 </div>

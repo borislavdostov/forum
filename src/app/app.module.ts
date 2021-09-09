@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,6 +11,8 @@ import { ThemeListItemComponent } from './components/theme-list-item/theme-list-
 
 import { UserService } from './services/user/user.service';
 import { storageServiceProvider } from './services/storage/storage.service';
+import { ThemeService } from './services/theme/theme.service';
+import { PostService } from './services/post/post.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,13 @@ import { storageServiceProvider } from './services/storage/storage.service';
     ThemeListItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     UserService,
+    ThemeService,
+    PostService,
     storageServiceProvider
   ],
   bootstrap: [

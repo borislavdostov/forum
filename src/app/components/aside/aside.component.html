@@ -1,20 +1,23 @@
 <div class="container p-3 m-3 border rounded">
     <h2> Recent posts</h2>
-    <div class="row row-cols-1 g-4 mt-4">
+    <div *ngIf="postList" class="row row-cols-1 g-4 mt-4">
 
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <a href="#" class="link-primary">
-                        <h3 class="card-title bg-light border p-2">JS Advanced</h3>
-                    </a>
-                    <div class="d-flex bd-highlight">
-                        <div class="me-auto bd-highlight">David</div>
-                        <div class="bd-highlight"><b>09.09.2021 11:34</b></div>
+        <div *ngFor="let post of postList">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="#" class="link-primary">
+                            <h3 class="card-title bg-light border p-2">{{post.themeId.name}}</h3>
+                        </a>
+                        <div class="d-flex bd-highlight">
+                            <div class="me-auto bd-highlight">{{post.userId.username}}</div>
+                            <div class="bd-highlight"><b>{{post.created_at}}</b></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+    <div *ngIf="!postList">Loading...</div>
 </div>
