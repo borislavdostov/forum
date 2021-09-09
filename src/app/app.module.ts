@@ -19,6 +19,10 @@ import { AsideComponent } from './components/aside/aside.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent
+  ]
 })
 export class AppModule { }
