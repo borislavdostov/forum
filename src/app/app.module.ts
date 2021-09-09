@@ -8,6 +8,9 @@ import { ThemeListComponent } from './components/theme-list/theme-list.component
 import { AsideComponent } from './components/aside/aside.component';
 import { ThemeListItemComponent } from './components/theme-list-item/theme-list-item.component';
 
+import { UserService } from './services/user/user.service';
+import { storageServiceProvider } from './services/storage/storage.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { ThemeListItemComponent } from './components/theme-list-item/theme-list-
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    storageServiceProvider
+  ],
   bootstrap: [
     AppComponent,
     HeaderComponent,
