@@ -1,7 +1,5 @@
-import { ITheme, IUser } from ".";
-
 export interface IPost {
-    userId: IUser;
-    themeId: ITheme;
+    user: string;
+    theme: string;
     created_at: string;
 }

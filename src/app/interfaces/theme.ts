@@ -1,9 +1,6 @@
-import { IUser } from ".";
-
 export interface ITheme {
-    subscribers: number;
     name: string;
-    userId: IUser;
+    subscribers: number;
+    user: string;
     created_at: string;
-    posts: string[];
 }
