@@ -14,6 +14,7 @@ import { storageServiceProvider } from './services/storage.service';
 import { ThemeService } from './services/theme.service';
 import { PostService } from './services/post.service';
 import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     UserService,
