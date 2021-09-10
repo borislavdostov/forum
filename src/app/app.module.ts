@@ -9,10 +9,11 @@ import { ThemeListComponent } from './components/theme-list/theme-list.component
 import { AsideComponent } from './components/aside/aside.component';
 import { ThemeListItemComponent } from './components/theme-list-item/theme-list-item.component';
 
-import { UserService } from './services/user/user.service';
-import { storageServiceProvider } from './services/storage/storage.service';
-import { ThemeService } from './services/theme/theme.service';
-import { PostService } from './services/post/post.service';
+import { UserService } from './services/user.service';
+import { storageServiceProvider } from './services/storage.service';
+import { ThemeService } from './services/theme.service';
+import { PostService } from './services/post.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PostService } from './services/post/post.service';
     FooterComponent,
     ThemeListComponent,
     AsideComponent,
-    ThemeListItemComponent
+    ThemeListItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
