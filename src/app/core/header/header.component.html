@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Forum</a>
+    <a class="navbar-brand">Forum</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,30 +8,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Themes</a>
+          <a class="nav-link active" aria-current="page">Themes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">New Theme</a>
+          <a class="nav-link active" aria-current="page">New Theme</a>
         </li>
       </ul>
       <div class="d-flex">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLogged">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a (click)="onLoginClick()" class="nav-link active" aria-current="page" href="#">Login</a>
+            <a (click)="onLoginClick()" class="nav-link active" aria-current="page" *ngIf="!isLogged">Login</a>
           </li>
           <li class="nav-item">
-            <a  class="nav-link active" aria-current="page" href="#">Register</a>
+            <a class="nav-link active" aria-current="page" *ngIf="!isLogged">Register</a>
           </li>
-        </ul>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLogged">
-          <li class="nav-item">
-            <div class="nav-link active" aria-current="page"><b>Hello, [username]@localdomain.com</b></div>
+          <li class="nav-item" *ngIf="isLogged">
+            <a class="nav-link active" aria-current="page">Profile</a>
           </li>
-          <li class="nav-item">
-            <a (click)="onLogoutClick()" class="nav-link active" aria-current="page" href="#">Logout</a>
+          <li class="nav-item" *ngIf="isLogged">
+            <a (click)="onLogoutClick()" class="nav-link active" aria-current="page">Logout</a>
           </li>
         </ul>
       </div>
