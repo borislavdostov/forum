@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
+import { storageServiceProvider } from './storage.service';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,9 @@ import { AsideComponent } from './aside/aside.component';
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    storageServiceProvider
   ],
   exports: [
     HeaderComponent,
