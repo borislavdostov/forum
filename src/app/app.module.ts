@@ -8,11 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 
-import { ThemeService } from './theme/theme.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { ThemeModule } from './theme/theme.module';
-import { UserService } from './services/user.service';
 import { PostModule } from './post/post.module';
 
 @NgModule({
@@ -27,10 +25,6 @@ import { PostModule } from './post/post.module';
     AppRoutingModule,
     ThemeModule,
     PostModule
-  ],
-  providers: [
-    UserService,
-    ThemeService,
   ],
   bootstrap: [
     AppComponent,
