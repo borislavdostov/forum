@@ -9,10 +9,10 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { CoreModule } from './core/core.module';
 import { ThemeModule } from './theme/theme.module';
 import { PostModule } from './post/post.module';
 import { UserModule } from './user/user.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
