@@ -6,14 +6,12 @@ import { ThemeService } from './theme.service';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { DetailComponent } from './detail/detail.component';
 import { SharedModule } from '../shared/shared.module';
-import { NewComponent } from './new/new.component';
 
 @NgModule({
   declarations: [
     ThemeListComponent,
     ThemeListItemComponent,
-    DetailComponent,
-    NewComponent
+    DetailComponent
   ],
   providers: [
     ThemeService
