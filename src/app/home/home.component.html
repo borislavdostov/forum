@@ -1,4 +1,10 @@
-<div style="display: flex;">
+<div *ngIf="!isLogged" class="container">
+    <h3>Welcome!</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus neque dicta reprehenderit ratione animi necessitatibus
+         laboriosam accusantium tempora est iusto nihil doloremque eveniet nesciunt sequi vitae, vel explicabo illum nobis.</p>
+</div>
+
+<div *ngIf="isLogged" style="display: flex;">
 <main>
     <app-theme-list></app-theme-list>
 </main>
