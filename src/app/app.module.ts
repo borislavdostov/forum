@@ -13,11 +13,13 @@ import { ThemeModule } from './theme/theme.module';
 import { PostModule } from './post/post.module';
 import { UserModule } from './user/user.module';
 import { CoreModule } from './core/core.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     CoreModule,

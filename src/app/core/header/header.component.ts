@@ -14,10 +14,6 @@ export class HeaderComponent {
 
   constructor(public userService: UserService) { }
 
-  onLoginClick() {
-    this.userService.login();
-  }
-
   onLogoutClick() {
     this.userService.logout();
   }

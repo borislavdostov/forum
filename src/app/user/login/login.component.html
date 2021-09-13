@@ -4,19 +4,30 @@
 
         <p>
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email">
+            <input #userEmail class="form-control" type="email" name="email" id="email"
+                (keyup)="updateInputValue('email',userEmail.value)">
+        </p>
+        <p *ngIf="showEmailError" class="text-danger">
+            Email is required
         </p>
         <p>
             <label class="form-label" for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password">
+            <input #userPassword class="form-control" type="password" name="password" id="password"
+                (keyup)="updateInputValue('password', userPassword.value)">
         </p>
+        <p *ngIf="showPasswordError" class="text-danger">
+            Password is required
+        </p>
+
         <div class="d-grid gap-2">
-            <button class="btn btn-primary">Login</button>
-          </div>
+            <button type="button" (click)="onLoginClicked()" [disabled]="hasFormErrors"
+                class="btn btn-primary">Login</button>
+        </div>
+        <app-loader [isLoading]="isLoading" ></app-loader>
 
         <p>
-            Have an account?
-            <a href="#">Register</a>
+            Don't have an account?
+            <a routerLink="/user/register">Register</a>
         </p>
     </div>
 </form>
