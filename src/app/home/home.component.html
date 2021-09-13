@@ -1,17 +1,13 @@
-<div *ngIf="!isLogged" class="container">
+<div class="container">
     <h3>Welcome!</h3>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus neque dicta reprehenderit ratione animi necessitatibus
-         laboriosam accusantium tempora est iusto nihil doloremque eveniet nesciunt sequi vitae, vel explicabo illum nobis.</p>
-</div>
-
-<div *ngIf="isLogged" style="display: flex;">
-<main>
-    <app-theme-list></app-theme-list>
-</main>
-
-<aside>
-    <app-aside title="Recent posts" >
-        <app-post-list></app-post-list>
-    </app-aside>
-</aside>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus neque dicta reprehenderit ratione
+        animinecessitatibus
+        laboriosam accusantium tempora est iusto nihil doloremque eveniet nesciunt sequi vitae, vel explicabo
+        illumnobis.</p>
+    <div *ngIf="!isLogged" class="container">
+        <ul>
+            <li><a routerLink="/user/login">Login</a></li>
+            <li><a routerLink="/user/register">Register</a></li>
+        </ul>
+    </div>
 </div>

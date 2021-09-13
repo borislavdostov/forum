@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 
 import { storageServiceProvider } from './storage.service';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
   ],
   providers: [
-    storageServiceProvider
+    storageServiceProvider,
+    AuthGuard
   ],
   imports: [
     CommonModule,
