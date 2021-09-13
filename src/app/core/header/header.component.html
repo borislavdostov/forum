@@ -20,13 +20,13 @@
       <div class="d-flex">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item" *ngIf="!isLogged">
-            <a class="nav-link active" aria-current="page" routerLink="user/login">Login</a>
+            <a class="nav-link active" aria-current="page" routerLink="/user/login">Login</a>
           </li>
           <li class="nav-item" *ngIf="!isLogged">
-            <a class="nav-link active" aria-current="page" routerLink="user/register">Register</a>
+            <a class="nav-link active" aria-current="page" routerLink="/user/register">Register</a>
           </li>
           <li class="nav-item" *ngIf="isLogged">
-            <a class="nav-link active" aria-current="page" routerLink="user/profile">Profile</a>
+            <a class="nav-link active" aria-current="page" routerLink="/user/profile">Profile</a>
           </li>
           <li class="nav-item" *ngIf="isLogged">
             <a (click)="onLogoutClick()" class="nav-link active" aria-current="page">Logout</a>
