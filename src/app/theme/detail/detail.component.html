@@ -1,4 +1,4 @@
-<div class="col">
+<div *ngIf="theme" class="col">
     <div class="card">
         <div class="card-body">
             <a href="#" class="link-primary">
@@ -12,3 +12,4 @@
         </div>
     </div>
 </div>
+<app-loader [isLoading]="!theme"></app-loader>

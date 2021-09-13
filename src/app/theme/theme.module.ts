@@ -5,6 +5,7 @@ import { ThemeListItemComponent } from './theme-list-item/theme-list-item.compon
 import { ThemeService } from './theme.service';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { DetailComponent } from './detail/detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DetailComponent } from './detail/detail.component';
   ],
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    ThemeRoutingModule,
+    SharedModule
   ],
   exports: [
     ThemeListComponent,
