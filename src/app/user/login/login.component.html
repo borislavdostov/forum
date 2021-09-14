@@ -27,10 +27,9 @@
             Password length must be at least 4 characters!
         </p>
         <div class="d-grid gap-2">
-            <button [disabled]="f.invalid" class="btn btn-primary">Login</button>
+            <button [disabled]="isLoading || f.invalid" class="btn btn-primary">Login</button>
         </div>
-        <app-loader [isLoading]="isLoading"></app-loader>
-
+        <app-loader [isLoading]="isLoading" class="mt-3 d-flex justify-content-center"></app-loader>
         <p>
             Don't have an account?
             <a routerLink="/user/register">Register</a>

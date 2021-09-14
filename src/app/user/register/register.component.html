@@ -11,7 +11,7 @@
             Username is required!
         </p>
         <p *ngIf="userUsername.touched && userUsername.errors?.minlength" class="text-danger">
-            Username should be at least 6 characters!
+            Username must be at least 6 characters!
         </p>
         <p>
             <label class="form-label" for="email">Email</label>
@@ -35,23 +35,27 @@
             Password is required!
         </p>
         <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="text-danger">
-            Password should be at least 8 characters!
+            Password must be at least 8 characters!
         </p>
         <p>
             <label class="form-label" for="repeatPassword">Repeat Password</label>
             <input #userRepeatPassword="ngModel" class="form-control"
                 [class.input-error]="userRepeatPassword.touched && !!userRepeatPassword.errors" type="password"
-                name="repeatPassword" id="repeatPassword" ngModel required minlength="8">
+                name="repeatPassword" id="repeatPassword" ngModel required minlength="8" repeatPasswordValidator>
         </p>
         <p *ngIf="userRepeatPassword.touched && userRepeatPassword.errors?.required" class="text-danger">
             Repeat password is required!
         </p>
         <p *ngIf="userRepeatPassword.touched && userRepeatPassword.errors?.minlength" class="text-danger">
-            Repeat should be at least 8 characters!
+            Repeat must be at least 8 characters!
+        </p>
+        <p *ngIf="userRepeatPassword.touched && userRepeatPassword.errors?.repeatPasswordValidator" class="text-danger">
+            Passwords does not match!
         </p>
         <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary">Login</button>
+            <button [disabled]="isLoading || f.invalid" type="button" class="btn btn-primary">Create Account</button>
         </div>
+        <app-loader [isLoading]="isLoading" class="mt-3 d-flex justify-content-center"></app-loader>
         <p>
             Already have an account?
             <a routerLink="/user/login">Login</a>

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent {
 
+  isLoading = false;
+
   constructor() { }
 
   submitFormHandler(formValue: { username: string, email: string, password: string }) {
