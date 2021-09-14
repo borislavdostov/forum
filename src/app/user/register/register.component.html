@@ -17,7 +17,7 @@
             <label class="form-label" for="email">Email</label>
             <input #userEmail="ngModel" class="form-control"
                 [class.input-error]="userEmail.touched && !!userEmail.errors" type="text" name="email" id="email"
-                ngModel required pattern="^[a-zA-Z\.-0-9]{6,}@\w+\.(com|bg)$">
+                ngModel required appEmailValidator>
         </p>
         <p *ngIf="userEmail.touched && userEmail.errors?.required" class=" text-danger">
             Email is required!
