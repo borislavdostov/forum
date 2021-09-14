@@ -1,40 +1,57 @@
-<form action="" method="POST">
+<form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
     <div class="container border rounded m-3">
         <h2>Register Form</h2>
-
         <p>
             <label class="form-label" for="username">Username</label>
-            <input class="form-control" type="username" name="username" id="username">
+            <input #userUsername="ngModel" class="form-control"
+                [class.input-error]="userUsername.touched && !!userUsername.errors" type="text" name="username"
+                id="username" ngModel required minlength="6">
         </p>
-        <p class="text-danger">
-            Username is required
+        <p *ngIf="userUsername.touched && userUsername.errors?.required" class="text-danger">
+            Username is required!
+        </p>
+        <p *ngIf="userUsername.touched && userUsername.errors?.minlength" class="text-danger">
+            Username should be at least 6 characters!
         </p>
         <p>
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email">
+            <input #userEmail="ngModel" class="form-control"
+                [class.input-error]="userEmail.touched && !!userEmail.errors" type="text" name="email" id="email"
+                ngModel required pattern="^[a-zA-Z\.-]{6,}@\w+\.(com|bg)$">
         </p>
-        <p class="text-danger">
-            Email is required
+        <p *ngIf="userEmail.touched && userEmail.errors?.required" class=" text-danger">
+            Email is required!
+        </p>
+        <p *ngIf="userEmail.touched && userEmail.errors?.pattern" class="text-danger">
+            Email is not valid!
         </p>
         <p>
             <label class="form-label" for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password">
+            <input #userPassword="ngModel" class="form-control"
+                [class.input-error]="userPassword.touched && !!userPassword.errors" type="password" name="password"
+                id="password" ngModel required minlength="8">
         </p>
-        <p class="text-danger">
-            Password is required
+        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="text-danger">
+            Password is required!
+        </p>
+        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="text-danger">
+            Password should be at least 8 characters!
         </p>
         <p>
             <label class="form-label" for="repeatPassword">Repeat Password</label>
-            <input class="form-control" type="repeatPassword" name="repeatPassword" id="repeatPassword">
+            <input #userRepeatPassword="ngModel" class="form-control"
+                [class.input-error]="userRepeatPassword.touched && !!userRepeatPassword.errors" type="password"
+                name="repeatPassword" id="repeatPassword" ngModel required minlength="8">
         </p>
-        <p class="text-danger">
-            Repeat password is required
+        <p *ngIf="userRepeatPassword.touched && userRepeatPassword.errors?.required" class="text-danger">
+            Repeat password is required!
         </p>
-
+        <p *ngIf="userRepeatPassword.touched && userRepeatPassword.errors?.minlength" class="text-danger">
+            Repeat should be at least 8 characters!
+        </p>
         <div class="d-grid gap-2">
             <button type="button" class="btn btn-primary">Login</button>
         </div>
-
         <p>
             Already have an account?
             <a routerLink="/user/login">Login</a>

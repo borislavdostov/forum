@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitFormHandler(formValue: { email: string, password: string }): void {
+  submitFormHandler(formValue: { email: string, password: string }) {
     this.isLoading = true;
     this.errorMessage = '';
     this.userService.login(formValue).subscribe({

@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css', "../../form-styles.css"]
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  submitFormHandler(formValue: { username: string, email: string, password: string }) {
+
   }
 
 }
