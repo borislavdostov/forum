@@ -1,29 +1,35 @@
-<form action="" method="POST">
+<form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
     <div class="container border rounded m-3">
         <h2>Login Form</h2>
 
         <p>
             <label class="form-label" for="email">Email</label>
-            <input #userEmail class="form-control" type="email" name="email" id="email"
-                (keyup)="updateInputValue('email',userEmail.value)">
+            <input #userEmail="ngModel" class="form-control"
+                [class.input-error]="userEmail.touched && !!userEmail.errors" type="text" name="email" id="email"
+                ngModel required pattern="^[a-zA-Z\.-]{6,}@\w+\.(com|bg)$">
         </p>
-        <p *ngIf="showEmailError" class="text-danger">
-            Email is required
+        <p *ngIf="userEmail.touched && userEmail.errors?.required" class="text-danger">
+            Email is required!
+        </p>
+        <p *ngIf="userEmail.touched && userEmail.errors?.pattern" class="text-danger">
+            Email is not valid!
         </p>
         <p>
             <label class="form-label" for="password">Password</label>
-            <input #userPassword class="form-control" type="password" name="password" id="password"
-                (keyup)="updateInputValue('password', userPassword.value)">
+            <input #userPassword="ngModel" class="form-control"
+                [class.input-error]="userPassword.touched && !!userPassword.errors" type="password" name="password"
+                id="password" ngModel required minlength="4">
         </p>
-        <p *ngIf="showPasswordError" class="text-danger">
-            Password is required
+        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="text-danger">
+            Password is required!
         </p>
-
+        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="text-danger">
+            Password length must be at least 4 characters!
+        </p>
         <div class="d-grid gap-2">
-            <button type="button" (click)="onLoginClicked()" [disabled]="hasFormErrors"
-                class="btn btn-primary">Login</button>
+            <button [disabled]="f.invalid" class="btn btn-primary">Login</button>
         </div>
-        <app-loader [isLoading]="isLoading" ></app-loader>
+        <app-loader [isLoading]="isLoading"></app-loader>
 
         <p>
             Don't have an account?
