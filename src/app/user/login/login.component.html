@@ -11,7 +11,7 @@
         <p *ngIf="userEmail.touched && userEmail.errors?.required" class="text-danger">
             Email is required!
         </p>
-        <p *ngIf="userEmail.touched && userEmail.errors?.pattern" class="text-danger">
+        <p *ngIf="userEmail.touched && userEmail.errors?.appEmailValidator" class="text-danger">
             Email is not valid!
         </p>
         <p>
