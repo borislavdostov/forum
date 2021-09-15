@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container m-5 p-3 border rounded-3">
     <h3>Welcome!</h3>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus neque dicta reprehenderit ratione
         animinecessitatibus
@@ -6,8 +6,9 @@
         illumnobis.</p>
     <div *ngIf="!isLogged" class="container">
         <ul>
-            <li><a routerLink="/user/login">Login</a></li>
-            <li><a routerLink="/user/register">Register</a></li>
+            <li><a routerLink="/user/login"><button class="btn btn-primary">Login</button></a></li>
+            <br/>
+            <li><a routerLink="/user/register"><button class="btn btn-primary">Register</button></a></li>
         </ul>
     </div>
 </div>
